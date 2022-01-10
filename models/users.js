@@ -19,6 +19,10 @@ const userSchema = new Schema({
     department: {
         type: String,
         required: true
+    },
+    admin: {
+        type: Boolean,
+        default: false
     }
 })
 
