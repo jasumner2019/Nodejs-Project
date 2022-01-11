@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-require('mongoose-currency').loadType(mongoose);
+const passportLocalMongoose = require('passport-local-mongoose');
 
 const userSchema = new Schema({
     firstname: {
@@ -25,5 +25,7 @@ const userSchema = new Schema({
         default: false
     }
 })
+
+userSchema.plugin(passportLocalMongoose);
 
 module.exports = mongoose.model('User',userSchema)
